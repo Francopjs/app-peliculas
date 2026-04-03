@@ -39,7 +39,14 @@ function MostrarLista(ArregloPelicula){
     ArregloPelicula.forEach(function(pelicula){
         let listaVariable = document.getElementById("ListaPeliculas")
         let itemVariable = document.createElement("li")
-        itemVariable.textContent = `Titulo: ${pelicula.titulo} Director: ${pelicula.director} Anio: ${pelicula.anio} Genero: ${pelicula.genero}` 
+        let titulo = document.createElement("strong")
+        titulo.textContent = pelicula.titulo
+
+        let detalle = document.createElement("p")
+        detalle.textContent = `${pelicula.director} · ${pelicula.anio} · ${pelicula.genero}`
+
+        itemVariable.appendChild(titulo)
+        itemVariable.appendChild(detalle)
         listaVariable.appendChild(itemVariable)
     })
 }
